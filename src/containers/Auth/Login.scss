@@ -1,0 +1,70 @@
+.login-background{
+    background: linear-gradient(135deg, #22c1c3 0%, #fdbb2d 100%);
+    height: 100rem;
+    width: auto;
+    .login-container{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: white;
+        border-radius: 21px;
+        width: 22rem;
+        height: 32rem;
+        margin: auto;
+        padding: 1.25rem;
+        
+        .text-login {
+            font-weight: 600;
+            font-size: 25px;
+            margin-bottom: 2rem;
+        }
+
+        .login-input {
+            margin: 0.4rem 0;
+        }
+        
+        .btn-login {
+            margin: 16px 0;
+            width: 100%;
+            height: 3rem;
+            border-radius: 2rem;
+            color: #ffffffff;
+            font-size: 1.5rem;
+            background: linear-gradient(90deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+            border: 0px;   
+            
+        }
+
+        .btn-login:hover{
+            background: linear-gradient(90deg, rgba(34,193,195,0.5) 0%, rgba(253,187,45,0.5) 100%);
+            cursor: pointer;
+        }
+
+        .forgotpass{
+            cursor: pointer;
+            font-size: 12px;
+            
+        }
+        .Or-login{
+            margin-top: 2rem;
+        }
+        .social-login{
+            font-size: 3rem;
+            text-align: center;
+            
+
+            .social-google {
+                color: #d6382d;
+                margin: 0 0.5rem;
+                cursor: pointer;
+            }
+            .social-facebook{
+                color: #0c88ef;
+                margin: 0 0.5rem;
+                cursor: pointer;
+            }
+        }
+    }
+}
