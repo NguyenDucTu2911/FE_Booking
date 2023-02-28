@@ -3,56 +3,56 @@ import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import * as actions from "../../store/actions";
 import "./Login.scss";
-import { FormattedMessage } from "react-intl";
-// import { hendleLoginApi } from "../../services/userService";
+// import { FormattedMessage } from "react-intl";
+import { hendleLoginApi } from "../../services/userService";
 import { userLoginSuccess } from "../../store/actions";
 
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      TaiKhoan: "",
-      MatKhau: "",
+      email: "",
+      password: "",
     };
   }
 
-  handleChangeTaiKhoan = (event) => {
+  handleChangeemail = (event) => {
     this.setState({
-      TaiKhoan: event.target.value,
+      email: event.target.value,
     });
   };
-  handleChangeMatKhau = (event) => {
+  handleChangepassword = (event) => {
     this.setState({
-      MatKhau: event.target.value,
+      password: event.target.value,
     });
   };
 
-//   handlelogin = async () => {
-//     this.setState({
-//       errMessage: "",
-//     });
-//     try {
-//       let data = await hendleLoginApi(this.state.TaiKhoan, this.state.MatKhau);
-//       if (data && data.errCode !== 0) {
-//         this.setState({
-//           errMessage: data.message,
-//         });
-//       }
-//       if (data && data.errCode === 0) {
-//         this.props.userLoginSuccess(data.user);
-//         console.log("thanh cong");
-//       }
-//     } catch (e) {
-//       console.log(e.response);
-//       if (e.response) {
-//         if (e.response.data) {
-//           this.setState({
-//             errMessage: e.response.data.Message,
-//           });
-//         }
-//       }
-//     }
-//   };
+  handlelogin = async () => {
+    this.setState({
+      errMessage: "",
+    });
+    try {
+      let data = await hendleLoginApi(this.state.email, this.state.password);
+      if (data && data.errCode !== 0) {
+        this.setState({
+          errMessage: data.message,
+        });
+      }
+      if (data && data.errCode === 0) {
+        this.props.userLoginSuccess(data.user);
+        console.log("thanh cong");
+      }
+    } catch (e) {
+      console.log(e.response);
+      if (e.response) {
+        if (e.response.data) {
+          this.setState({
+            errMessage: e.response.data.Message,
+          });
+        }
+      }
+    }
+  };
 
   hendleLoginkey = (event) => {
     if (event.key === "Enter") {
@@ -71,8 +71,8 @@ class Login extends Component {
                 type="text"
                 className="form-control"
                 placeholder="nhập tên đăng nhập"
-                value={this.state.TaiKhoan}
-                onChange={(event) => this.handleChangeTaiKhoan(event)}
+                value={this.state.email}
+                onChange={(event) => this.handleChangeemail(event)}
                 onKeyDown={(event) => this.hendleLoginkey(event)}
               />
             </div>
@@ -82,9 +82,9 @@ class Login extends Component {
                 type="password"
                 className="form-control"
                 placeholder="nhập mật khẩu"
-                value={this.state.MatKhau}
+                value={this.state.password}
                 onKeyDown={(event) => this.hendleLoginkey(event)}
-                onChange={(event) => this.handleChangeMatKhau(event)}
+                onChange={(event) => this.handleChangepassword(event)}
               />
             </div>
 
