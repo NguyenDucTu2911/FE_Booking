@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect, Route, Switch } from "react-router-dom";
 import UserManage from "../containers/System/admin/UserManage";
-import ProductManage from "../containers/System/ProductManage";
+import ProductManage from "../containers/System/admin/ProductManage";
 import RegisterPackageGroupOrAcc from "../containers/System/RegisterPackageGroupOrAcc";
 
 class System extends Component {
