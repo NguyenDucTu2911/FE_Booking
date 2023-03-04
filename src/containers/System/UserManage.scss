@@ -1,0 +1,137 @@
+.Manageusers{
+    font-family: arial, sans-serif;
+    padding: 0.5rem;
+    
+    .Manageusers-content{
+
+
+
+        .Manageusers-title{
+            text-align: center;
+            color: #0071ba;
+            font-size: 2.5rem;
+            margin: 1.5rem;
+        }
+
+    }
+    .icon{
+        padding-right: 7px;
+        font-size: 13px;
+    }
+    .btn{
+        margin-bottom: 1rem;
+        border-radius: 0.3rem;
+    }
+
+    table {
+        
+        border-collapse: collapse;
+        width: 100%;
+
+            .taitle{
+                background-color: #008b8b;
+            }
+
+            td, th {
+                border: 1px solid #e9ecef;
+                text-align: center;
+                padding: 8px;
+
+                .btn-edit {
+                    border: none;
+                    background-color: transparent;
+                    outline: none;
+                    width: 2rem;
+                    height: auto;
+                    color: black;
+                    margin-right: 4px;
+                }
+                .btn-delete{
+                    border: none;
+                    background-color: transparent;
+                    outline: none;
+                    width: 2rem;
+                    height: auto;
+                    color: black;
+                    margin-left: 4px;
+                }
+                .edit-item{
+                    font-size: 1.4rem;
+                    &:hover{
+                        color: rgb(136, 136, 46);
+                    }
+                }
+                .delete-item{
+                    font-size: 1.4rem;
+                    &:hover{
+                        color: red;
+                    }
+                }
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+
+            .item:hover {
+                background-color: #a5abb1;
+            }
+      }
+          
+}
+
+.modalUserContainer{
+    h5{
+        text-align: center;
+    }
+    .modalUserBody{
+        .inputContainer{
+            display: flex;
+            flex-direction: column;
+            input{
+                height: 30px;
+                border-radius: 3px;
+                border: 1px solid gray;
+                outline: none;
+                padding: 0 10px;
+            }
+        }
+        .item {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+
+            .inputContainer {
+                /* display: flex; */
+                /* flex-direction: column; */
+                width: 49%;
+            }
+        }
+        
+    }
+    
+    .btn-modal{
+        padding: 7px 7px;
+        text-align: center;
+        line-height: 20px;
+        
+    }
+    .modal-title {
+        width: 100%;
+        .btn-closeModal{
+            float: right;
+            background-color: transparent;
+            color: bisque;
+            border: none;
+            &:hover{
+                color: red;
+            }
+        }
+        
+    }
+    
+    .close {
+        display: none;
+    }
+    
+}
