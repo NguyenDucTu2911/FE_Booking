@@ -8,4 +8,16 @@ const hendlegetUser = (id) => {
   return axios.get(`/api/User?id=${id}`);
 };
 
-export { hendleLoginApi, hendlegetUser };
+const hendleDeletetUser = (id) => {
+  return axios.delete("/api/DeleteUser", {
+    data: {
+      id: id,
+    },
+  });
+};
+
+const hendlecreateUser = (data) => {
+  return axios.post("/api/CreateUser", data);
+};
+
+export { hendleLoginApi, hendlegetUser, hendleDeletetUser, hendlecreateUser };
