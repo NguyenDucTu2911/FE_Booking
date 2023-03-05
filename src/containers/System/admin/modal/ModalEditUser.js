@@ -3,41 +3,42 @@ import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
 import { Button, Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
 import { emitter } from "../../../../utils/emitter";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
-class ModalUser extends Component {
+import { toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
+import _ from "lodash";
+
+class ModalEditUser extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: "",
       firstName: "",
       lastName: "",
       email: "",
       address: "",
       gender: "",
       roleid: "",
-      password: "",
     };
-    this.listenToEmitter();
   }
-
-  listenToEmitter() {
-    emitter.on("EVEN_CLEAR_MODAL_DATA", () => {
+  componentDidMount() {
+    let { EditUser } = this.props;
+    if (EditUser && !_.isEmpty(EditUser)) {
       this.setState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        address: "",
-        gender: "",
-        roleid: "",
-        password: "",
+        id: EditUser.id,
+        firstName: EditUser.firstName,
+        lastName: EditUser.lastName,
+        email: EditUser.email,
+        address: EditUser.address,
+        gender: EditUser.gender,
+        roleid: EditUser.roleid,
       });
-    });
+    }
+    console.log("helo check", EditUser);
   }
-  componentDidMount() {}
 
   toggle = () => {
-    this.props.toggleUserModal();
+    this.props.toggleEditUserModal();
   };
   hendalOnChaneInput = (even, id) => {
     let copyState = { ...this.state };
@@ -48,24 +49,16 @@ class ModalUser extends Component {
     });
   };
 
-  hendalAddUser = () => {
+  hendalEditUser = () => {
     let check = this.checkValidateInput();
     if (check === true) {
-      this.props.createUser(this.state);
+      this.props.SaveUser(this.state);
     }
   };
 
   checkValidateInput = () => {
     let isvalid = true;
-    let arr = [
-      "firstName",
-      "lastName",
-      "email",
-      "address",
-      "gender",
-      "roleid",
-      "password",
-    ];
+    let arr = ["firstName", "lastName", "email", "address", "gender", "roleid"];
     for (let i = 0; i < arr.length; i++) {
       if (!this.state[arr[i]]) {
         isvalid = false;
@@ -92,7 +85,7 @@ class ModalUser extends Component {
         toggle={() => {
           this.toggle();
         }}
-        className={"modalUserContainer"}
+        className={"ModalEditUserContainer"}
         size="lg"
         centered
       >
@@ -101,7 +94,7 @@ class ModalUser extends Component {
             this.toggle();
           }}
         >
-          Thêm Người Dùng
+          Sửa Thông Tin Người Dùng
           <button
             className="btn-closeModal"
             onClick={() => {
@@ -112,7 +105,7 @@ class ModalUser extends Component {
           </button>
         </ModalHeader>
         <ModalBody>
-          <div className="modalUserBody">
+          <div className="ModalEditUserBody">
             <div className="item">
               <div className="inputContainer">
                 <label>firstName</label>
@@ -126,7 +119,7 @@ class ModalUser extends Component {
               </div>
 
               <div className="inputContainer">
-                <label>Mật Khẩu</label>
+                <label>lastName</label>
                 <input
                   type="lastName"
                   onChange={(even) => {
@@ -149,7 +142,7 @@ class ModalUser extends Component {
                 ></input>
               </div>
               <div className="inputContainer">
-                <label>Họ Tên</label>
+                <label>address</label>
                 <input
                   type="text"
                   onChange={(even) => {
@@ -162,7 +155,7 @@ class ModalUser extends Component {
 
             <div className="item">
               <div className="inputContainer">
-                <label for="inputState">Giới Tính</label>
+                <label for="inputState">gender</label>
                 <select
                   name="gender"
                   id="inputState"
@@ -190,17 +183,6 @@ class ModalUser extends Component {
                   value={this.state.roleid}
                 ></input>
               </div>
-
-              <div className="inputContainer">
-                <label>roleid</label>
-                <input
-                  type="password"
-                  onChange={(even) => {
-                    this.hendalOnChaneInput(even, "password");
-                  }}
-                  value={this.state.password}
-                ></input>
-              </div>
             </div>
           </div>
         </ModalBody>
@@ -209,10 +191,10 @@ class ModalUser extends Component {
             className="btn-modal"
             color="primary"
             onClick={() => {
-              this.hendalAddUser();
+              this.hendalEditUser();
             }}
           >
-            Thêm
+            Lưu
           </Button>
           {""}
           <Button
@@ -238,4 +220,4 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ModalUser);
+export default connect(mapStateToProps, mapDispatchToProps)(ModalEditUser);
