@@ -3,7 +3,7 @@ import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
 import { Button, Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
 import { emitter } from "../../../../utils/emitter";
-
+// import "./ModalEditUser.scss";
 import { toast } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 import _ from "lodash";
@@ -106,84 +106,81 @@ class ModalEditUser extends Component {
         </ModalHeader>
         <ModalBody>
           <div className="ModalEditUserBody">
-            <div className="item">
-              <div className="inputContainer">
-                <label>firstName</label>
-                <input
-                  type="text"
-                  onChange={(even) => {
-                    this.hendalOnChaneInput(even, "firstName");
-                  }}
-                  value={this.state.firstName}
-                ></input>
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <div className="item">
+                    <div className="inputContainer">
+                      <label for="inputfirstNamel4">First Name</label>
+                      <input type="text"
+                        onChange={(even) => {
+                          this.hendalOnChaneInput(even, "firstName");
+                        }}
+                        value={this.state.firstName} class="form-control" id="inputfirstNamel4" placeholder="firstName">
+                        </input>                  
+                    </div>
+                    <div className="inputContainer">
+                      <label for="inputlastNamel4">Last Name</label>
+                      <input type="text"
+                        onChange={(even) => {
+                          this.hendalOnChaneInput(even, "lastName");
+                        }}
+                        value={this.state.lastName} class="form-control" id="inputlastNamel4" placeholder="lastName">
+                        </input>                  
+                    </div>
+                 </div>
+                 <div className="item">
+                    <div className="inputContainer">
+                      <label for="inputemaill4">Email</label>
+                      <input type="email"
+                         onChange={(even) => {
+                          this.hendalOnChaneInput(even, "email");
+                        }}
+                        value={this.state.email} class="form-control" id="inputemaill4" placeholder="Email">
+                      </input>                                              
+                    </div>
+                      <div className="inputContainer">
+                        <label for="inputaddress">Address</label>
+                        <input type="text"
+                          onChange={(even) => {
+                            this.hendalOnChaneInput(even, "address");
+                          }}
+                          value={this.state.address} class="form-control" id="inputaddress" placeholder="Address">
+                        </input>                                              
+                      </div>                     
+                  </div>
+                  <div className="item">
+                    <div className="inputContainer">
+                      <label for="inputState">Gender</label>
+                      <select
+                        name="gender"
+                        id="inputState"
+                        className="form-control"
+                        onChange={(even) => {
+                          this.hendalOnChaneInput(even, "gender");
+                        }}
+                        value={this.state.gender}
+                      >
+                        <option value="DEFAULT" selected>
+                          Chọn...
+                        </option>
+                        <option value="Nam">Nam</option>
+                        <option value="Nư">Nữ</option>
+                      </select>
+                    </div>
+                    <div className="inputContainer">
+                      <label for="inputRoleid">Roleid</label>
+                      <input type="type"
+                        onChange={(even) => {
+                          this.hendalOnChaneInput(even, "roleid");
+                        }}
+                        value={this.state.roleid} class="form-control" id="inputRoleid" placeholder="Roleid">
+                      </input>                                       
+                    </div>
+                  </div>                 
+                </div>
               </div>
-
-              <div className="inputContainer">
-                <label>lastName</label>
-                <input
-                  type="lastName"
-                  onChange={(even) => {
-                    this.hendalOnChaneInput(even, "lastName");
-                  }}
-                  value={this.state.lastName}
-                ></input>
-              </div>
-            </div>
-
-            <div className="item">
-              <div className="inputContainer">
-                <label>Email</label>
-                <input
-                  type="email"
-                  onChange={(even) => {
-                    this.hendalOnChaneInput(even, "email");
-                  }}
-                  value={this.state.email}
-                ></input>
-              </div>
-              <div className="inputContainer">
-                <label>address</label>
-                <input
-                  type="text"
-                  onChange={(even) => {
-                    this.hendalOnChaneInput(even, "address");
-                  }}
-                  value={this.state.address}
-                ></input>
-              </div>
-            </div>
-
-            <div className="item">
-              <div className="inputContainer">
-                <label for="inputState">gender</label>
-                <select
-                  name="gender"
-                  id="inputState"
-                  className="form-control"
-                  onChange={(even) => {
-                    this.hendalOnChaneInput(even, "gender");
-                  }}
-                  value={this.state.gender}
-                >
-                  <option value="DEFAULT" selected>
-                    Chọn...
-                  </option>
-                  <option value="Nam">Nam</option>
-                  <option value="Nư">Nữ</option>
-                </select>
-              </div>
-
-              <div className="inputContainer">
-                <label>roleid</label>
-                <input
-                  type="type"
-                  onChange={(even) => {
-                    this.hendalOnChaneInput(even, "roleid");
-                  }}
-                  value={this.state.roleid}
-                ></input>
-              </div>
-            </div>
+            </form>
           </div>
         </ModalBody>
         <ModalFooter>
