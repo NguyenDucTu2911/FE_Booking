@@ -20,4 +20,14 @@ const hendlecreateUser = (data) => {
   return axios.post("/api/CreateUser", data);
 };
 
-export { hendleLoginApi, hendlegetUser, hendleDeletetUser, hendlecreateUser };
+const hendleEditUser = (data) => {
+  return axios.put("/api/UpdateUser", data);
+};
+
+export {
+  hendleLoginApi,
+  hendlegetUser,
+  hendleDeletetUser,
+  hendlecreateUser,
+  hendleEditUser,
+};
