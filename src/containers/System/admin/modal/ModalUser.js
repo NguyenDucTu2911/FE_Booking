@@ -3,8 +3,9 @@ import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
 import { Button, Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
 import { emitter } from "../../../../utils/emitter";
+
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import "react-toastify/dist/ReactToastify.css";
 
 class ModalUser extends Component {
   constructor(props) {
@@ -126,7 +127,7 @@ class ModalUser extends Component {
               </div>
 
               <div className="inputContainer">
-                <label>Mật Khẩu</label>
+                <label>lastName</label>
                 <input
                   type="lastName"
                   onChange={(even) => {
@@ -149,7 +150,7 @@ class ModalUser extends Component {
                 ></input>
               </div>
               <div className="inputContainer">
-                <label>Họ Tên</label>
+                <label>address</label>
                 <input
                   type="text"
                   onChange={(even) => {
@@ -162,7 +163,7 @@ class ModalUser extends Component {
 
             <div className="item">
               <div className="inputContainer">
-                <label for="inputState">Giới Tính</label>
+                <label for="inputState">gender</label>
                 <select
                   name="gender"
                   id="inputState"
@@ -192,7 +193,7 @@ class ModalUser extends Component {
               </div>
 
               <div className="inputContainer">
-                <label>roleid</label>
+                <label>password</label>
                 <input
                   type="password"
                   onChange={(even) => {

@@ -20,7 +20,7 @@ class UserManage extends Component {
     super(props);
     this.state = {
       arrUser: [],
-
+      isOpenModalUser: false,
       isOpenModaEditlUser: false,
       UserEdit: {},
     };
@@ -30,6 +30,7 @@ class UserManage extends Component {
     await this.getAllFormUser();
   }
 
+  //get All User
   getAllFormUser = async () => {
     let response = await hendlegetUser("ALL");
     console.log(response);
@@ -40,6 +41,40 @@ class UserManage extends Component {
     }
   };
 
+  //handle ADD User
+  hendleAddUser = () => {
+    this.setState({
+      isOpenModalUser: true,
+    });
+  };
+
+  //create user
+  createUser = async (data) => {
+    try {
+      let res = await hendlecreateUser(data);
+      if (res && res.errCode !== 0) {
+        alert(res.errMessage);
+      } else {
+        await this.getAllFormUser();
+        toast.success("thêm thành công", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+        this.setState({
+          isOpenModalUser: false,
+        });
+      }
+      emitter.emit("EVEN_CLEAR_MODAL_DATA");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   //handle edit User
   hendleEditUser = (data) => {
@@ -76,6 +111,36 @@ class UserManage extends Component {
     }
   };
 
+  //delete user
+  hendalDleteUser = async (user) => {
+    try {
+      let res = await hendleDeletetUser(user.id);
+      if (res && res.message.errCode === 0) {
+        await this.getAllFormUser();
+        toast.success("xóa thành công", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      } else {
+        alert(res.message.errMessage);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  //togede
+  toggleUserModal = () => {
+    this.setState({
+      isOpenModalUser: !this.state.isOpenModalUser,
+    });
+  };
   toggleEditUserModal = () => {
     this.setState({
       isOpenModaEditlUser: !this.state.isOpenModaEditlUser,
@@ -87,7 +152,12 @@ class UserManage extends Component {
     console.log(arrUser);
     return (
       <div className="Manageusers">
-      {this.state.isOpenModaEditlUser && (
+        <ModalUser
+          isOpen={this.state.isOpenModalUser}
+          toggleUserModal={this.toggleUserModal}
+          createUser={this.createUser}
+        />
+        {this.state.isOpenModaEditlUser && (
           <ModalEditUser
             isOpen={this.state.isOpenModaEditlUser}
             toggleEditUserModal={this.toggleEditUserModal}
@@ -101,7 +171,7 @@ class UserManage extends Component {
         <div className="create">
           <button
             className="btn btn-primary px-3"
-            // onClick={() => this.hendleAddUser()}
+            onClick={() => this.hendleAddUser()}
           >
             <i className="fas fa-plus icon"></i>
             Thêm Người Dùng
@@ -136,14 +206,14 @@ class UserManage extends Component {
                       <td>
                         <button
                           className="btn-edit"
-                           onClick={() => this.hendleEditUser(item)}
+                          onClick={() => this.hendleEditUser(item)}
                         >
                           <i className="fas fa-user-edit edit-item"></i>
                         </button>
 
                         <button
                           className="btn-delete"
-                          // onClick={() => this.hendalDleteUser(item)}
+                          onClick={() => this.hendalDleteUser(item)}
                         >
                           <i className="far fa-trash-alt delete-item"></i>
                         </button>
