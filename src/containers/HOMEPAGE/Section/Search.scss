@@ -72,6 +72,7 @@
           width: 100%;
           display: flex;
           justify-content: space-evenly;
+          flex-wrap: wrap;
           .btn-search_item {
             min-width: 4rem;
             height: 100%;
@@ -79,6 +80,7 @@
             border: none;
             text-align: center;
             line-height: 0.7rem;
+
             &:hover {
               background-color: #f0f0f080;
             }
