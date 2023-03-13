@@ -8,7 +8,10 @@
         "Top_Lookup":"Top Lookup",
         "ent":"Enter keywords...",
         "Outstanding Doctor":"Outstanding Doctor",
-        "Diagnostics":"Diagnostics"
+        "Diagnostics":"Diagnostics",
+        "Featured Doctor Last Week": "Featured Doctor Last Week",
+        "Notable medical facilities": "Notable medical facilities",
+        "Popular specialties":"Popular specialties"
 
     },
     "common": {

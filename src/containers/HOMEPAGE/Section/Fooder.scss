@@ -1,0 +1,38 @@
+.fooder {
+  width: auto;
+  min-height: 10rem;
+  background-color: #a9a3af6e;
+  .fooder-item {
+    .fooder-item_social {
+      display: flex;
+      justify-content: center;
+      line-height: 7rem;
+      .Social_fb {
+        font-size: 3rem;
+        cursor: pointer;
+        .fb {
+          padding: 1rem 1rem;
+          color: blue;
+        }
+        .it {
+          padding: 1rem 1rem;
+          color: red;
+        }
+        .yt {
+          padding: 1rem 1rem;
+          color: red;
+        }
+        .tw {
+          padding: 1rem 1rem;
+          color: rgb(58, 116, 224);
+        }
+      }
+    }
+    .fooder-item_tent {
+      text-align: center;
+      font-size: 1.2rem;
+      width: 100%;
+      //   line-height: 5rem;
+    }
+  }
+}

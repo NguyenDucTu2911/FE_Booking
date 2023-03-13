@@ -2,7 +2,7 @@
   position: relative;
   background-color: #fff;
   width: 80%;
-  height: 14rem;
+  min-height: 14rem;
   left: 0;
   right: 0;
   bottom: 0;
@@ -68,7 +68,7 @@
           margin: auto;
         }
         .buttom-item {
-          height: 1.5rem;
+          height: 2.5rem;
           width: 100%;
           display: flex;
           justify-content: space-evenly;
