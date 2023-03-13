@@ -1,4 +1,16 @@
 {
+    "Home_header": {
+        "Specialties": "Specialties",
+        "Medical facilities": "Medical facilities",
+        "DOCTOR":"Doctor",
+        "examination package": "examination package",
+        "search":"search",
+        "Top_Lookup":"Top Lookup",
+        "ent":"Enter keywords...",
+        "Outstanding Doctor":"Outstanding Doctor",
+        "Diagnostics":"Diagnostics"
+
+    },
     "common": {
         "add": "Add",
         "edit": "Edit",

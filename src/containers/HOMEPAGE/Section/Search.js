@@ -26,7 +26,7 @@ class Search extends Component {
       <div className="section-search">
         <div className="search_content">
           <div className="search-title">
-            <FormattedMessage id="homeheader.Drug_Lookup" />
+            <FormattedMessage id="Home_header.search" />
           </div>
           <div className="search">
             <div className="search-item">
@@ -34,8 +34,8 @@ class Search extends Component {
                 <input
                   type="search"
                   placeholder={intl.formatMessage({
-                    id: "homeheader.ent",
-                    defaultMessage: "username",
+                    id: "Home_header.ent",
+                    // defaultMessage: "",
                   })}
                   className="input-search"
                   name="search"
@@ -51,33 +51,37 @@ class Search extends Component {
             </div>
             <div className="search-buttom">
               <p className="search-buttom-text">
-                <FormattedMessage id="homeheader.Top_Lookup" />
+                <FormattedMessage id="Home_header.Top_Lookup" />
               </p>
               <div className="buttom-item">
                 <div className="btn-search_item">
-                  <button className="btn-search_item">panadol</button>
-                </div>
-                <div className="btn-search_item">
-                  <button className="btn-search_item">vitamin</button>
-                </div>
-                <div className="btn-search_item">
                   <button className="btn-search_item">
-                    <FormattedMessage id="homeheader.masks" />
+                    <FormattedMessage id="Home_header.DOCTOR" />
                   </button>
                 </div>
                 <div className="btn-search_item">
                   <button className="btn-search_item">
-                    <FormattedMessage id="homeheader.Brine" />
+                    <FormattedMessage id="Home_header.examination package" />
                   </button>
                 </div>
                 <div className="btn-search_item">
                   <button className="btn-search_item">
-                    <FormattedMessage id="homeheader.nasal_spray" />
+                    <FormattedMessage id="Home_header.Specialties" />
                   </button>
                 </div>
                 <div className="btn-search_item">
                   <button className="btn-search_item">
-                    <FormattedMessage id="homeheader.pulmonary_tonic" />
+                    <FormattedMessage id="Home_header.Medical facilities" />
+                  </button>
+                </div>
+                <div className="btn-search_item">
+                  <button className="btn-search_item">
+                    <FormattedMessage id="Home_header.Outstanding Doctor" />
+                  </button>
+                </div>
+                <div className="btn-search_item">
+                  <button className="btn-search_item">
+                    <FormattedMessage id="Home_header.Diagnostics" />
                   </button>
                 </div>
               </div>

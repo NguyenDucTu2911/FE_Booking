@@ -8,6 +8,26 @@
     color: #03a9f4;
   }
 }
+.languages {
+  color: #9b9d8c;
+  .flag-vn {
+    margin-right: 4px;
+    cursor: pointer;
+    &.active {
+      span {
+        color: orange;
+      }
+    }
+  }
+  .flag-en {
+    cursor: pointer;
+    &.active {
+      span {
+        color: orange;
+      }
+    }
+  }
+}
 
 // .content{
 //     position: relative;

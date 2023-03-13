@@ -1,4 +1,17 @@
 {
+
+    "Home_header": {
+        "Specialties": "Chuyên Khoa",
+        "Medical facilities": "Cơ Sở Y Tế",
+        "DOCTOR": "Bác Sĩ",
+        "examination package": "Gói Khám",
+        "search": "Tìm Kiếm",
+        "Top_Lookup": "Tra Cứu Hàng Đầu",
+        "ent":"Nhập Từ Khóa...",
+        "Outstanding Doctor": "Bác Sĩ Nổi Bật",
+        "Diagnostics": "Chuẩn Đoán"
+
+    },
     "common": {
         "add": "Thêm",
         "edit": "Sửa",

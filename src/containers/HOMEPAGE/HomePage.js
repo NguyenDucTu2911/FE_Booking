@@ -11,7 +11,7 @@ class HomePage extends Component {
         <>
           <HeaderHome />
           <Banner />
-          {/* <Search /> */}
+          <Search />
         </>
       </div>
     );
