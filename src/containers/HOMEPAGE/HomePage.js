@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import HeaderHome from "./HeaderHome";
 import Banner from "./Section/Banner";
 import Search from "./Section/Search";
+import Fooder from "./Section/Fooder";
 
 class HomePage extends Component {
   render() {
@@ -12,6 +13,7 @@ class HomePage extends Component {
           <HeaderHome />
           <Banner />
           <Search />
+          <Fooder/>
         </>
       </div>
     );
