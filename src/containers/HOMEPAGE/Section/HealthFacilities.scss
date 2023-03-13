@@ -1,0 +1,58 @@
+h3 {
+    font: 14px/1.5 "Montserrat", sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    outline: none;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+
+  
+  .HealthFacilities {
+    width: 80%;
+    left: 0;
+    right: 0;
+    position: relative;
+    margin: auto;
+    min-height: 27rem;
+    .HealthFacilities-Title {
+      padding: 2rem 0;
+      font-weight: bold;
+    }
+    .customize {
+      height: auto;
+      .container {
+        border: 1px solid #dad7dc;
+        width: 97%;
+        border-radius: 13px;
+        height: 18rem;
+        .img-customize {
+          width: 100%;
+          height: auto;
+          position: relative;
+          overflow: hidden;
+          margin-bottom: 20px;
+          .luoi {
+            // border-radius: 50%;
+            margin: 10px auto;
+            object-fit: contain !important;
+          }
+        }
+        .HealthFacilities-customize {
+          .DT {
+            font-size: 14px;
+            text-align: center;
+            color: #111;
+            white-space: pre-wrap;
+          }
+          .K {
+            font-size: 12px;
+            text-align: center;
+            color: #555;
+          }
+        }
+      }
+    }
+  }
+  

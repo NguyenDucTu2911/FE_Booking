@@ -9,7 +9,9 @@
         "Top_Lookup": "Tra Cứu Hàng Đầu",
         "ent":"Nhập Từ Khóa...",
         "Outstanding Doctor": "Bác Sĩ Nổi Bật",
-        "Diagnostics": "Chuẩn Đoán"
+        "Diagnostics": "Chuẩn Đoán",
+        "Address":"Địa Chỉ",
+        "Outstanding medical facility":"Cơ Sở Y Tế Nổi Bật"
 
     },
     "common": {
