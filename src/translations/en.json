@@ -9,7 +9,8 @@
         "ent":"Enter keywords...",
         "Outstanding Doctor":"Outstanding Doctor",
         "Diagnostics":"Diagnostics",
-        "Address":"Address"
+        "Address":"Address",
+        "Outstanding medical facility":"Outstanding medical facility"
 
     },
     "common": {

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import HeaderHome from "./HeaderHome";
 import Banner from "./Section/Banner";
 import Search from "./Section/Search";
+import HealthFacilities from "./Section/HealthFacilities"
 import Fooder from "./Section/Fooder";
 import Map from "./Section/Plugins/Map";
 
@@ -14,6 +15,7 @@ class HomePage extends Component {
           <HeaderHome />
           <Banner />
           <Search />
+          <HealthFacilities/>
           <Map/>
           <Fooder/>
         </>
