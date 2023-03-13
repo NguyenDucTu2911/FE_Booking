@@ -4,6 +4,7 @@ import HeaderHome from "./HeaderHome";
 import Banner from "./Section/Banner";
 import Search from "./Section/Search";
 import Fooder from "./Section/Fooder";
+import Map from "./Section/Plugins/Map";
 
 class HomePage extends Component {
   render() {
@@ -13,6 +14,7 @@ class HomePage extends Component {
           <HeaderHome />
           <Banner />
           <Search />
+          <Map/>
           <Fooder/>
         </>
       </div>
