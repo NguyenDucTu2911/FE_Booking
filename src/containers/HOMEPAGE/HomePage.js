@@ -3,8 +3,10 @@ import { connect } from "react-redux";
 import HeaderHome from "./HeaderHome";
 import Banner from "./Section/Banner";
 import Search from "./Section/Search";
-import Fooder from "./Section/Fooder";
 import Doctor from "./Section/Doctor";
+import HealthFacilities from "./Section/HealthFacilities";
+import Fooder from "./Section/Fooder";
+import Map from "./Section/Plugins/Map";
 
 class HomePage extends Component {
   render() {
@@ -15,6 +17,8 @@ class HomePage extends Component {
           <Banner />
           <Search />
           <Doctor />
+          <HealthFacilities />
+          <Map />
           <Fooder />
         </>
       </div>

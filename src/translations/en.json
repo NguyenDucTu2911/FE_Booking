@@ -1,6 +1,6 @@
 {
     "Home_header": {
-        "Specialties": "Specialties",
+         "Specialties": "Specialties",
         "Medical facilities": "Medical facilities",
         "DOCTOR":"Doctor",
         "examination package": "examination package",
@@ -9,9 +9,9 @@
         "ent":"Enter keywords...",
         "Outstanding Doctor":"Outstanding Doctor",
         "Diagnostics":"Diagnostics",
-        "Featured Doctor Last Week": "Featured Doctor Last Week",
-        "Notable medical facilities": "Notable medical facilities",
-        "Popular specialties":"Popular specialties"
+        "Address":"Address",
+        "Outstanding medical facility":"Outstanding medical facility",
+        "Featured Doctor Last Week":"Featured Doctor Last Week"
 
     },
     "common": {
