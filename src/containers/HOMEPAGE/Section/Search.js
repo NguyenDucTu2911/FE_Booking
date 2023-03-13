@@ -26,7 +26,9 @@ class Search extends Component {
       <div className="section-search">
         <div className="search_content">
           <div className="search-title">
-            <FormattedMessage id="Home_header.search" />
+            <h3>
+              <FormattedMessage id="Home_header.search" />
+            </h3>
           </div>
           <div className="search">
             <div className="search-item">

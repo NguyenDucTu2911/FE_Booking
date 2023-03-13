@@ -1,6 +1,6 @@
 {
     "Home_header": {
-        "Specialties": "Specialties",
+         "Specialties": "Specialties",
         "Medical facilities": "Medical facilities",
         "DOCTOR":"Doctor",
         "examination package": "examination package",
@@ -10,7 +10,8 @@
         "Outstanding Doctor":"Outstanding Doctor",
         "Diagnostics":"Diagnostics",
         "Address":"Address",
-        "Outstanding medical facility":"Outstanding medical facility"
+        "Outstanding medical facility":"Outstanding medical facility",
+        "Featured Doctor Last Week":"Featured Doctor Last Week"
 
     },
     "common": {
