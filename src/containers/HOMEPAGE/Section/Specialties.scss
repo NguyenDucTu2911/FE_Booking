@@ -1,0 +1,57 @@
+h3 {
+  font: 14px/1.5 "Montserrat", sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  outline: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.Specialties {
+  //   width: 80%;
+  left: 0;
+  right: 0;
+  position: relative;
+  background-color: #dad7dc;
+  //   margin: auto;
+  min-height: 27rem;
+  .container {
+    width: 80%;
+    .Specialties-Title {
+      padding: 2rem 0;
+      font-weight: bold;
+    }
+    .customize {
+      height: auto;
+
+      .container {
+        border: 1px solid #ffffffc4;
+        width: 97%;
+        border-radius: 13px;
+        height: 100%;
+        .img-customize {
+          width: 100%;
+          height: auto;
+          position: relative;
+          overflow: hidden;
+          margin-bottom: 20px;
+          .luoi {
+            width: 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: #eee;
+          }
+        }
+        .Specialties-customize {
+          .DT {
+            font-size: 14px;
+            text-align: center;
+            color: #111;
+            white-space: pre-wrap;
+          }
+        }
+      }
+    }
+  }
+}

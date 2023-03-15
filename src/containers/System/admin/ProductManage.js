@@ -11,9 +11,12 @@ class ProductManage extends Component {
     }
 
 
+    
     render() {
         return (
-            <div className="text-center" >Manage products</div>
+    
+        <section></section>
+            
         )
     }
 

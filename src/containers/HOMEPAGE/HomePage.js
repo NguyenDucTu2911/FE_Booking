@@ -7,6 +7,7 @@ import Doctor from "./Section/Doctor";
 import HealthFacilities from "./Section/HealthFacilities";
 import Fooder from "./Section/Fooder";
 import Map from "./Section/Plugins/Map";
+import Specialties from "./Section/Specialties";
 
 class HomePage extends Component {
   render() {
@@ -18,6 +19,7 @@ class HomePage extends Component {
           <Search />
           <Doctor />
           <HealthFacilities />
+          <Specialties />
           <Map />
           <Fooder />
         </>
