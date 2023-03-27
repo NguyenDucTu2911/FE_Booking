@@ -72,7 +72,7 @@
           width: 100%;
           display: flex;
           justify-content: space-evenly;
-          flex-wrap: wrap;
+          flex-wrap: nowrap;
           .btn-search_item {
             min-width: 4rem;
             height: 100%;

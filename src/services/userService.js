@@ -24,10 +24,20 @@ const hendleEditUser = (data) => {
   return axios.put("/api/UpdateUser", data);
 };
 
+const headlegetAllcode = (data) => {
+  return axios.get(`/api/allcode?type=${data}`);
+};
+
+const TopDoctorHome = (limit) => {
+  return axios.get(`/api/TopDoctorHome?limit=${limit}`);
+};
+
 export {
   hendleLoginApi,
   hendlegetUser,
   hendleDeletetUser,
   hendlecreateUser,
   hendleEditUser,
+  headlegetAllcode,
+  TopDoctorHome,
 };

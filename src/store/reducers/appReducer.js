@@ -35,7 +35,7 @@ const appReducer = (state = initialState, action) => {
       return {
         ...state,
         language: action.language,
-        // started: true
+        // started: true,
       };
     default:
       return state;
