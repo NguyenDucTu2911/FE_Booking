@@ -3,7 +3,7 @@ import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
 import { Button, Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
 import { emitter } from "../../../../utils/emitter";
-
+import CommonUtils from "../../../../utils/CommonUtils";
 import { toast } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 
@@ -18,9 +18,22 @@ class ModalUser extends Component {
       gender: "",
       roleid: "",
       password: "",
+      Anh: ""
     };
     this.listenToEmitter();
   }
+
+  hendalOnChaneImg = async (event) => {
+    let data = event.target.files;
+    let file = data[0];
+    if (file) {
+      let base64 = await CommonUtils.getBase64(file);
+      // console.log("check báe64", base64)
+      this.setState({
+        Anh: base64,
+      });
+    }
+  };
 
   listenToEmitter() {
     emitter.on("EVEN_CLEAR_MODAL_DATA", () => {
@@ -32,6 +45,7 @@ class ModalUser extends Component {
         gender: "",
         roleid: "",
         password: "",
+        Anh: "",
       });
     });
   }
@@ -66,6 +80,7 @@ class ModalUser extends Component {
       "gender",
       "roleid",
       "password",
+      "Anh",
     ];
     for (let i = 0; i < arr.length; i++) {
       if (!this.state[arr[i]]) {
@@ -201,6 +216,20 @@ class ModalUser extends Component {
                   }}
                   value={this.state.password}
                 ></input>
+              </div>
+            </div>
+            <div className="item">
+              <div className="inputContainer">
+                <label for="Anh">Anh</label>
+                <input
+                  id="Anh"
+                  name="Anh"
+                  type="file"
+                  onChange={(even) => {
+                    this.hendalOnChaneImg(even, "Anh");
+                  }}
+                  // value={Anh}
+                />
               </div>
             </div>
           </div>

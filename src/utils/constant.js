@@ -25,3 +25,9 @@ export const YesNoObj = {
   YES: "Y",
   NO: "N",
 };
+
+export const ROLE = {
+  admin: "R1",
+  QuanLy: "R2",
+  NhanVien: "R3",
+};
