@@ -32,6 +32,18 @@ const TopDoctorHome = (limit) => {
   return axios.get(`/api/TopDoctorHome?limit=${limit}`);
 };
 
+const AllDoctor = () => {
+  return axios.get("/api/AllDoctorHome");
+};
+
+const saveDetailDoctorAction = (data) => {
+  return axios.post("/api/save-info-doctor", data);
+};
+
+const detailDoctor = (id) => {
+  return axios.get(`/api/get-info-doctor?id=${id}`);
+};
+
 export {
   hendleLoginApi,
   hendlegetUser,
@@ -40,4 +52,7 @@ export {
   hendleEditUser,
   headlegetAllcode,
   TopDoctorHome,
+  AllDoctor,
+  saveDetailDoctorAction,
+  detailDoctor,
 };
