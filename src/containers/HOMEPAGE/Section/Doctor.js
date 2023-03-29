@@ -36,6 +36,7 @@ class Doctor extends Component {
       slidesToScroll: 1,
     };
     let { arrdoctor } = this.state;
+    console.log("checjdoctor", arrdoctor);
     arrdoctor = arrdoctor.concat(arrdoctor).concat(arrdoctor);
     return (
       <div className="Doctor">
@@ -66,7 +67,8 @@ class Doctor extends Component {
                     </div>
                     <div className="Doctor-customize">
                       <h4 className="DT">
-                        PGS, Ts, Bác sĩ cao cấp {item.firstName} {item.lastName}
+                        {item.positionData.value_vi} {item.firstName}{" "}
+                        {item.lastName}
                       </h4>
                       <h5 className="K">
                         <span>Da liễu</span>

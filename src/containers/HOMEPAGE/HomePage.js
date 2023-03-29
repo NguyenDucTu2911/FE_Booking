@@ -32,6 +32,7 @@ class HomePage extends Component {
             <Doctor />
             <Specialties />
             <HealthFacilities />
+
             <Map />
             <Fooder />
           </Suspense>
