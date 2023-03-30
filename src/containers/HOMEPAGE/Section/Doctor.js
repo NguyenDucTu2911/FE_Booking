@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router";
+
 import "./Doctor.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -23,6 +25,12 @@ class Doctor extends Component {
       });
     }
   }
+
+  viewDetailDoctor = (Doctor) => {
+    this.props.history.push({
+      pathname: `/Detail_Doctor/${Doctor.id}`,
+    });
+  };
 
   async componentDidMount() {
     await this.props.loadDoctor();
@@ -55,7 +63,11 @@ class Doctor extends Component {
                 img = Buffer(item.image, "base64").toString("binary");
               }
               return (
-                <div className="customize" key={index}>
+                <div
+                  className="customize"
+                  key={index}
+                  onClick={() => this.viewDetailDoctor(item)}
+                >
                   <div className="container">
                     <div className="img-customize">
                       <div
@@ -99,4 +111,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Doctor);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Doctor));
