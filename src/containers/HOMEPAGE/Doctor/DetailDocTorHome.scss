@@ -12,6 +12,10 @@
       background-color: #fff04b;
       margin: 0 3px 5px 0;
       padding: 4px 10px;
+      cursor: pointer;
+      &:hover{
+        background-color: #52e22ec2;
+      }
     }
   }
   .DoctorMap {
