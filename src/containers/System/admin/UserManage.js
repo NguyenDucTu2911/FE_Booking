@@ -190,9 +190,7 @@ class UserManage extends Component {
             </tr>
             {arrUser &&
               arrUser.map((item, index) => {
-                {
-                  /* let date = moment(new Date(item.NgaySinh)).format("DD/MM/YYYY"); */
-                }
+                console.log(item);
                 return (
                   <>
                     <tr className="item">
@@ -201,8 +199,8 @@ class UserManage extends Component {
                       <td>{item.email}</td>
                       <td>{item.address}</td>
                       {/* <td>{date}</td> */}
-                      <td>{item.gender}</td>
-                      <td>{item.roleid}</td>
+                      <td>{item.genderData.value_vi}</td>
+                      <td>{item.roleidData.value_vi}</td>
                       <td>
                         <button
                           className="btn-edit"

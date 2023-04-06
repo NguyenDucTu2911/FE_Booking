@@ -44,6 +44,36 @@ const detailDoctor = (id) => {
   return axios.get(`/api/get-info-doctor?id=${id}`);
 };
 
+const saveSchedule = (data) => {
+  return axios.post("/api/create-Schedule", data);
+};
+
+const getSchedule = (doctorid, date) => {
+  return axios.get(`/api/get-schedule?doctorid=${doctorid}&date=${date}`);
+};
+
+const getExtraInfo = (doctorid) => {
+  return axios.get(`/api/get-extraInfo?doctorid=${doctorid}`);
+};
+
+const getBooking = (doctorid) => {
+  return axios.get(`/api/get-Booking?doctorid=${doctorid}`);
+};
+
+const hendlecreateBooking = (data) => {
+  return axios.post("/api/create-book", data);
+};
+
+const verifyCreateBooking = (data) => {
+  return axios.post("/api/verify_create-book", data);
+};
+
+const listBooking = (data) => {
+  return axios.get(
+    `/api/get-AllBooking?doctorid=${data.doctorid}&date=${data.date}`
+  );
+};
+
 export {
   hendleLoginApi,
   hendlegetUser,
@@ -55,4 +85,11 @@ export {
   AllDoctor,
   saveDetailDoctorAction,
   detailDoctor,
+  saveSchedule,
+  getSchedule,
+  getExtraInfo,
+  getBooking,
+  hendlecreateBooking,
+  verifyCreateBooking,
+  listBooking,
 };

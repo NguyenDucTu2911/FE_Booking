@@ -54,9 +54,10 @@
         "admin":{
             "manage-user":"Người Dùng",
             "manage-administer":"Quản Lý",
+            "Manage_appointments":"Quản Lý Lịch khám",
             "Doctor details":"Chi Tiết Bác Sĩ",
-            "manage-Customer":"Khách hàng",
-            "manage-medicine":"Thuốc"
+            "manage-Customer":"Lịch Khám",
+            "manage-medicine":"Bác Sĩ"
         },
         "medicine":{
             "manage-medicine":"Thuốc"

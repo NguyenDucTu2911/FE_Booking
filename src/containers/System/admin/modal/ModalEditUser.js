@@ -194,9 +194,9 @@ class ModalEditUser extends Component {
                         <option value="DEFAULT" selected>
                           Chọn...
                         </option>
-                        <option value="21">Nam</option>
-                        <option value="22">Nữ</option>
-                        <option value="23">Khác</option>
+                        <option value="M">Nam</option>
+                        <option value="F">Nữ</option>
+                        <option value="O">Khác</option>
                       </select>
                     </div>
                     <div className="inputContainer">
