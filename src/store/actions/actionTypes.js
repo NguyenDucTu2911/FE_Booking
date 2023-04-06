@@ -28,6 +28,33 @@ const actionTypes = Object.freeze({
   //detaildoctor
   FETCH_DETAIL_DOCTOR_SUCCESS: "FETCH_DETAIL_DOCTOR_SUCCESS",
   FETCH_DETAIL_DOCTOR_FAIL: "FETCH_DETAIL_DOCTOR_FAIL",
+
+  //AllCODE_SCHEDULE
+  FETCH_DETAIL_AllCODE_SCHEDULE_SUCCESS:
+    "FETCH_DETAIL_AllCODE_SCHEDULE_SUCCESS",
+  FETCH_DETAIL_AllCODE_SCHEDULE_FAIL: "FETCH_DETAIL_AllCODE_SCHEDULE_FAIL",
+
+  //Required_Doctor
+  FETCH_DETAIL_Required_Doctor_Info_SUCCESS:
+    "FETCH_DETAIL_Required_Doctor_Info_SUCCESS",
+  FETCH_DETAIL_Required_Doctor_Info_FAIL:
+    "FETCH_DETAIL_Required_Doctor_Info_FAIL",
+
+  //Required_Doctor
+  FETCH_DETAIL_Create_booking_Info_SUCCESS:
+    "FETCH_DETAIL_Create_booking_Info_SUCCESS",
+  FETCH_DETAIL_Create_booking_Info_FAIL:
+    "FETCH_DETAIL_Create_booking_Info_FAIL",
+
+  //verifyCreateBooking
+  FETCH_DETAIL_verifyCreateBooking_SUCCESS:
+    "FETCH_DETAIL_verifyCreateBooking_SUCCESS",
+  FETCH_DETAIL_verifyCreateBooking_FAIL:
+    "FETCH_DETAIL_verifyCreateBooking_FAIL",
+
+  //ListBooking
+  FETCH_ListBooking_SUCCESS: "FETCH_ListBooking_SUCCESS",
+  FETCH_ListBooking_FAIL: "FETCH_ListBooking_FAIL",
 });
 
 export default actionTypes;

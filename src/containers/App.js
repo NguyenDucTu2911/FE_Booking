@@ -17,6 +17,7 @@ import DetailDocTorHome from "./HOMEPAGE/Doctor/DetailDocTorHome";
 import { CustomToastCloseButton } from "../components/CustomToast";
 import HomePage from "./HOMEPAGE/HomePage";
 import CustomScrollbars from "../components/CustomScrollbars";
+import VerifyEmailBooking from "./HOMEPAGE/Doctor/Verify/Verifyemailbooking";
 
 class App extends Component {
   handlePersistorState = () => {
@@ -58,6 +59,10 @@ class App extends Component {
                   <Route
                     path={path.Detail_Doctor}
                     component={DetailDocTorHome}
+                  />
+                  <Route
+                    path={path.Verify_email_booking}
+                    component={VerifyEmailBooking}
                   />
                 </Switch>
               </CustomScrollbars>

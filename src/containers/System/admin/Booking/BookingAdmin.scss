@@ -1,0 +1,42 @@
+.Booking {
+  .Booking-Header {
+    text-align: center;
+    margin-top: 14px;
+    .Header_content {
+    }
+  }
+
+  .Booking-Body {
+    #father {
+      height: 400px;
+      overflow: auto;
+    }
+    .BodyTable {
+      .btn-confirm,
+      .btn-bill {
+        margin: 0 2px !important;
+        padding: 0 7px !important;
+        &.btn-confirm {
+          background-color: #dd7c42de;
+          &:hover {
+            background-color: #dd590cde;
+          }
+        }
+        &.btn-bill {
+          background-color: #28cf8ade;
+          &:hover {
+            background-color: #09ac68ea;
+          }
+        }
+      }
+    }
+  }
+  .Booking-Footer {
+  }
+}
+// #father {
+//   height: 400px;
+//   overflow: auto;
+// }
+.btn-confirm {
+}

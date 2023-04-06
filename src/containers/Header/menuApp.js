@@ -6,34 +6,24 @@ export const adminMenu = [
       {
         name: "menu.admin.manage-administer",
         link: "/system/user-manage",
-        // subMenus: [
-        //     { name: 'menu.system.system-administrator.user-manage', link: '/system/user-manage' },
-        //     { name: 'menu.system.system-administrator.product-manage', link: '/system/product-manage' },
-        //     { name: 'menu.system.system-administrator.medicine', link: '/system/medicine' },
-        // ]
       },
       {
         name: "menu.admin.Doctor details",
         link: "/system/DoctorDetails",
-        
-      },
-      {
-        name: "menu.admin.manage-Customer",
-        link: "/system/Customer",
       },
     ],
   },
   {
-    //quản lý thuốc
+    //bác Sĩ
     name: "menu.admin.manage-medicine",
     menus: [
       {
-        name: "menu.admin.manage-administer",
-        link: "/system/medicine",
+        name: "menu.admin.manage-Customer",
+        link: "/system/Booking",
       },
       {
-        name: "Nhap Hang",
-        link: "/system/sale",
+        name: "menu.admin.Manage_appointments",
+        link: "/system/BookingAdmin",
       },
     ],
   },
@@ -55,12 +45,16 @@ export const adminMenu = [
 
 export const NhanvienMenu = [
   {
-    //quản lý thuốc
+    //bác Sĩ
     name: "menu.admin.manage-medicine",
     menus: [
       {
-        name: "menu.admin.manage-administer",
-        link: "/system/medicine",
+        name: "menu.admin.manage-Customer",
+        link: "/system/Booking",
+      },
+      {
+        name: "menu.admin.Manage_appointments",
+        link: "/system/BookingAdmin",
       },
     ],
   },

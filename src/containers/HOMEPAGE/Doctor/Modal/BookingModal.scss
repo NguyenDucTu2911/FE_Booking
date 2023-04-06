@@ -1,6 +1,28 @@
 .nav-doctor {
   margin-top: 4.9rem;
 }
+.detail-doc-tor {
+  width: 80%;
+  margin: auto;
+}
+.title-tt {
+  background-color: #1da1f238;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0.5rem;
+  margin: 1rem 0;
+}
+
+.top {
+  margin-top: 1rem;
+}
+
+button.btn.btn-warning {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+//format
 .DoctorBody {
   .DoctorTime {
     display: flex;
@@ -12,13 +34,7 @@
       background-color: #fff04b;
       margin: 0 3px 5px 0;
       padding: 4px 10px;
-
-      line-height: 37px;
       cursor: pointer;
-      height: 40px;
-      &:hover {
-        background-color: #52e22ec2;
-      }
     }
   }
   .DoctorMap {
@@ -44,7 +60,26 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-.bs {
-  padding-left: 15px;
+.price {
   color: #555;
+  padding-left: 7px;
+}
+.close {
+  display: none !important;
+}
+
+.modal-title {
+  width: 100%;
+  .btn-closeModal {
+    float: right;
+    background-color: transparent;
+    border: none;
+    &:hover {
+      cursor: pointer;
+      color: red;
+    }
+  }
+}
+.Time {
+  padding-left: 3px;
 }

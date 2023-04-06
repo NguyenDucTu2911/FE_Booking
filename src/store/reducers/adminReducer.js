@@ -4,9 +4,14 @@ const initialState = {
   isLoggedIn: false,
   adminInfo: null,
   GENDER: [],
+  TIME: [],
   TopDocTor: [],
   getAllDoctor: [],
   DetailDoctor: [],
+  RequiredDoctor: [],
+  booking: [],
+  data: [],
+  ListBooking: [],
 };
 
 const adminReducer = (state = initialState, action) => {
@@ -72,6 +77,66 @@ const adminReducer = (state = initialState, action) => {
     }
     case actionTypes.FETCH_DETAIL_DOCTOR_FAIL: {
       state.DetailDoctor = [];
+      return {
+        ...state,
+      };
+    }
+    case actionTypes.FETCH_DETAIL_AllCODE_SCHEDULE_SUCCESS: {
+      state.TIME = action.data;
+      return {
+        ...state,
+      };
+    }
+    case actionTypes.FETCH_DETAIL_AllCODE_SCHEDULE_FAIL: {
+      state.TIME = [];
+      return {
+        ...state,
+      };
+    }
+    case actionTypes.FETCH_DETAIL_Required_Doctor_Info_SUCCESS: {
+      state.RequiredDoctor = action.data;
+      return {
+        ...state,
+      };
+    }
+    case actionTypes.FETCH_DETAIL_Required_Doctor_Info_FAIL: {
+      state.RequiredDoctor = [];
+      return {
+        ...state,
+      };
+    }
+    case actionTypes.FETCH_DETAIL_Create_booking_Info_SUCCESS: {
+      state.booking = action.data;
+      return {
+        ...state,
+      };
+    }
+    case actionTypes.FETCH_DETAIL_Create_booking_Info_FAIL: {
+      state.booking = [];
+      return {
+        ...state,
+      };
+    }
+    case actionTypes.FETCH_DETAIL_verifyCreateBooking_SUCCESS: {
+      state.data = action.data;
+      return {
+        ...state,
+      };
+    }
+    case actionTypes.FETCH_DETAIL_verifyCreateBooking_FAIL: {
+      state.data = [];
+      return {
+        ...state,
+      };
+    }
+    case actionTypes.FETCH_ListBooking_SUCCESS: {
+      state.ListBooking = action.data;
+      return {
+        ...state,
+      };
+    }
+    case actionTypes.FETCH_ListBooking_FAIL: {
+      state.data = [];
       return {
         ...state,
       };

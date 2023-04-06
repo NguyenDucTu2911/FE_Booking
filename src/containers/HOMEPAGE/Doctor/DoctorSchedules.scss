@@ -1,0 +1,58 @@
+.DoctorBody {
+  .DoctorTime {
+    flex-wrap: wrap;
+    .DoctorTime-item {
+      text-align: center;
+      border-radius: 2px;
+      background-color: #fff04b;
+      margin: 0 3px 5px 0;
+      padding: 4px 10px;
+      line-height: 37px;
+      cursor: pointer;
+      &:hover {
+        background-color: #52e22ec2;
+      }
+    }
+    .DoctorTime_announcement {
+      width: 500px;
+    }
+  }
+
+  .DoctorMap {
+    .DoctorMap_content {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 3px;
+      .DoctorMap-item {
+        font-size: large;
+      }
+    }
+    .DoctorMap_buy {
+      font-size: large;
+      .detail {
+        color: #337ab7;
+        cursor: pointer;
+        font-size: 13px;
+      }
+    }
+  }
+}
+.select-time {
+  border-bottom: 1px solid #ddd;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  outline: none;
+  margin-top: 5px;
+  padding: 5px 0;
+  color: #337ab7;
+  font-weight: 600;
+  background-color: transparent;
+  cursor: pointer;
+  option {
+    cursor: pointer;
+  }
+}
+// .detail {
+//   color: #337ab7;
+//   cursor: pointer;
+// }

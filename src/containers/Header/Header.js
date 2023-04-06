@@ -29,7 +29,7 @@ class Header extends Component {
       if (role === ROLE.admin) {
         MENU = adminMenu;
       }
-      if (role === ROLE.QuanLy) {
+      if (role === ROLE.BacSi) {
         MENU = NhanvienMenu;
       }
     }

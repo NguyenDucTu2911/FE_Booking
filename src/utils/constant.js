@@ -5,11 +5,19 @@ export const path = {
   LOG_OUT: "/logout",
   SYSTEM: "/system",
   Detail_Doctor: "/Detail_Doctor/:id",
+  Verify_email_booking: "/verify_create-book/",
 };
 
 export const languages = {
   VI: "vi",
   EN: "en",
+};
+
+export const CRUD_ACTIONS = {
+  CREATE: "CREATE",
+  ADD: "ADD",
+  EDIT: "EDIT",
+  DELETE: "DELETE",
 };
 
 export const manageActions = {
@@ -29,6 +37,6 @@ export const YesNoObj = {
 
 export const ROLE = {
   admin: "R1",
-  QuanLy: "R2",
-  NhanVien: "R3",
+  BacSi: "R2",
+  // NhanVien: "R3",
 };

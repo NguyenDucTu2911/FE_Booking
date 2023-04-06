@@ -53,9 +53,10 @@
         "admin":{
             "manage-user":"manage user",
             "manage-administer":"administer",
+            "Manage_appointments":"Manage appointments",
             "Doctor details":"Doctor details",
-            "manage-Customer":"Customer",
-            "manage-medicine":"medicine"
+            "manage-Customer":"Booking",
+            "manage-medicine":"Doctor"
         },
         "sale":{
             "sale":"Sale",

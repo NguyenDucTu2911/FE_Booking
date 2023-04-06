@@ -7,6 +7,7 @@ import Link from "@mui/material/Link";
 import "./DetailDocTorHome.scss";
 import Select from "react-select";
 import { detailDoctor } from "../../../services/userService";
+import DoctorSchedules from "./DoctorSchedules";
 
 import * as actions from "../../../store/actions";
 
@@ -15,16 +16,17 @@ class DetailDocTorHome extends Component {
     super(props);
     this.state = {
       arrDetailDocTorHome: [],
+      currentDoctorId: -1,
     };
   }
 
-  // componentDidUpdate(prevProps, prevState, snapshot) {
-  //   if (prevProps.topDetailDocTorHome !== this.props.topDetailDocTorHome) {
-  //     this.setState({
-  //       arrDetailDocTorHome: this.props.topDetailDocTorHome,
-  //     });
-  //   }
-  // }
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (prevProps.topDetailDocTorHome !== this.props.topDetailDocTorHome) {
+      this.setState({
+        arrDetailDocTorHome: this.props.topDetailDocTorHome,
+      });
+    }
+  }
 
   async componentDidMount() {
     if (
@@ -33,9 +35,10 @@ class DetailDocTorHome extends Component {
       this.props.match.params.id
     ) {
       let id = this.props.match.params.id;
+      this.setState({
+        currentDoctorId: id,
+      });
       let res = await detailDoctor(id);
-      console.log("alooo", res.data.positionData.value_vi);
-
       if (res && res.errCode === 0) {
         this.setState({
           arrDetailDocTorHome: res.data,
@@ -116,48 +119,21 @@ class DetailDocTorHome extends Component {
               </div>
 
               <div className="col-md-12">
-                <div className="time col-md-2">
-                  <Select
-                    value={selectedOption}
-                    onChange={this.handleChange}
-                    // options={}
-                  />
-                </div>
+                <DoctorSchedules
+                  arrDetailDocTorHome={this.state.currentDoctorId}
+                />
               </div>
-
-              <div className="col-md-12">
-                <div className="time col-md-12 my-2">
-                  <i class="far fa-calendar-alt mr-1"></i>
-                  Lịch Khám
-                </div>
-                <div className="DoctorBody d-flex">
-                  <div className="DoctorTime">
-                    <div className="DoctorTime-item">14:30 - 15:00</div>
-                    <div className="DoctorTime-item">14:30 - 15:00</div>
-
-                    <div className="DoctorTime-item">14:30 - 15:00</div>
-                    <div className="DoctorTime-item ">14:30 - 15:00</div>
-                    <div className="DoctorTime-item ">14:30 - 15:00</div>
-                    <div className="DoctorTime-item ">14:30 - 15:00</div>
-                  </div>
-                  <div className="DoctorMap">
-                    ĐỊA CHỈ KHÁM Phòng khám Chuyên khoa Da Liễu 207 Phố Huế -
-                    Hai Bà Trưng - Hà Nội
-                  </div>
-                </div>
-              </div>
-
               <div className="col-md-12">
                 <div className="DoctorDetail">
-                  {arrDetailDocTorHome 
-                  && arrDetailDocTorHome.DoctorData 
-                  && arrDetailDocTorHome.DoctorData.contentHTML && (
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: arrDetailDocTorHome.DoctorData.contentHTML,
-                  }}
-                ></div>
-              )}
+                  {arrDetailDocTorHome &&
+                    arrDetailDocTorHome.DoctorData &&
+                    arrDetailDocTorHome.DoctorData.contentHTML && (
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: arrDetailDocTorHome.DoctorData.contentHTML,
+                        }}
+                      ></div>
+                    )}
                 </div>
               </div>
             </div>
