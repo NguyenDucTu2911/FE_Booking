@@ -8,7 +8,8 @@ import "./DetailDocTorHome.scss";
 import Select from "react-select";
 import { detailDoctor } from "../../../services/userService";
 import DoctorSchedules from "./DoctorSchedules";
-
+import Comment from "./Plugins/Comment";
+import Likes from "./Plugins/likes";
 import * as actions from "../../../store/actions";
 
 class DetailDocTorHome extends Component {
@@ -56,6 +57,11 @@ class DetailDocTorHome extends Component {
     // console.log("alooo", arrDetailDocTorHome.DoctorData.description);
 
     // console.log("doctor", this.props.match.params.id);
+    let cur =
+      process.env.REACT_APP_IS_LOCALHOST === 1
+        ? "https://2bee-113-161-66-128.ngrok-free.app/"
+        : window.location.href;
+    console.log("hello", cur);
     const { selectedOption } = this.state;
     return (
       <>
@@ -112,6 +118,9 @@ class DetailDocTorHome extends Component {
                               )}
                           </div>
                         </div>
+                        <div className="plugin">
+                          <Likes />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -134,6 +143,11 @@ class DetailDocTorHome extends Component {
                         }}
                       ></div>
                     )}
+                </div>
+              </div>
+              <div className="col-md-12">
+                <div className="comment">
+                  <Comment dataHref={cur} width={"100%"} />
                 </div>
               </div>
             </div>

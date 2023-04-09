@@ -7,6 +7,7 @@ import { NumericFormat } from "react-number-format";
 import * as actions from "../../../../store/actions";
 import moment from "moment";
 import _ from "lodash";
+import LoadingOverlay from "react-loading-overlay";
 
 class Oder extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class Oder extends Component {
       firstName: "",
       email: "",
       phonenumber: "",
+      isShowLoading: false,
     };
   }
 
@@ -53,6 +55,9 @@ class Oder extends Component {
     if (!firstName) {
       alert("vui lòng nhập TÊN");
     }
+    this.setState({
+      isShowLoading: true,
+    });
     this.props.saveBooking({
       email: email,
       doctorid: TimeLine.doctorid,
@@ -69,6 +74,7 @@ class Oder extends Component {
       firstName: "",
       email: "",
       phonenumber: "",
+      isShowLoading: false,
     });
   };
 
@@ -79,150 +85,158 @@ class Oder extends Component {
     let { isModalBooking, closeBooking } = this.props;
     return (
       <>
-        <Modal
-          isOpen={isModalBooking}
-          toggle={closeBooking}
-          className={"ModalEditUserContainer"}
-          size="lg"
-          centered
+        <LoadingOverlay
+          active={this.state.isShowLoading}
+          spinner
+          text="Loading..."
         >
-          <ModalHeader
-            toggle={() => {
-              this.toggle();
-            }}
+          <Modal
+            isOpen={isModalBooking}
+            toggle={closeBooking}
+            className={"ModalEditUserContainer"}
+            size="lg"
+            centered
           >
-            Đặt Lịch Khám
-            <button className="btn-closeModal" onClick={closeBooking}>
-              <i className="fas fa-times-circle close-modal"></i>
-            </button>
-          </ModalHeader>
-          <div className="container ">
-            <div className="detail-doc-tor">
-              <div className="row">
-                <div className="col-md-12 top">
-                  <div className="card">
-                    <div className="card-body">
-                      <div className="row">
-                        <div className="col-md-4">
-                          <div className="img-container">
-                            <div
-                              class="luoi"
-                              width="120"
-                              height="120"
-                              style={{
-                                backgroundImage: `url(${arrOder.image})`,
-                              }}
-                            />
-                          </div>
-                        </div>
-                        <div className="col-md-8">
-                          <div className="info">
-                            <div className="h2 d-flex mx-2">
-                              {arrOder &&
-                                arrOder.positionData &&
-                                arrOder.positionData.value_vi && (
-                                  <div className="mx-2">
-                                    {arrOder.positionData.value_vi}
-                                  </div>
-                                )}
-                              {arrOder.firstName} {arrOder.lastName}
+            <ModalHeader
+              toggle={() => {
+                this.toggle();
+              }}
+            >
+              Đặt Lịch Khám
+              <button className="btn-closeModal" onClick={closeBooking}>
+                <i className="fas fa-times-circle close-modal"></i>
+              </button>
+            </ModalHeader>
+            <div className="container ">
+              <div className="detail-doc-tor">
+                <div className="row">
+                  <div className="col-md-12 top">
+                    <div className="card">
+                      <div className="card-body">
+                        <div className="row">
+                          <div className="col-md-4">
+                            <div className="img-container">
+                              <div
+                                class="luoi"
+                                width="120"
+                                height="120"
+                                style={{
+                                  backgroundImage: `url(${arrOder.image})`,
+                                }}
+                              />
                             </div>
                           </div>
-                          <div className="info">
-                            <div className="Time">
-                              <div className="Time">
-                                {TimeLine && TimeLine.timeTypeData && (
-                                  <div className="Time_item">
-                                    {TimeLine.timeTypeData.value_en}
-                                  </div>
-                                )}
+                          <div className="col-md-8">
+                            <div className="info">
+                              <div className="h2 d-flex mx-2">
+                                {arrOder &&
+                                  arrOder.positionData &&
+                                  arrOder.positionData.value_vi && (
+                                    <div className="mx-2">
+                                      {arrOder.positionData.value_vi}
+                                    </div>
+                                  )}
+                                {arrOder.firstName} {arrOder.lastName}
                               </div>
                             </div>
-                            <div className="price">
-                              Gía Khám:
-                              {arrOder &&
-                                arrOder.DoctorInfoData &&
-                                arrOder.DoctorInfoData.timeTypePriceId && (
-                                  <NumericFormat
-                                    value={
-                                      arrOder.DoctorInfoData.timeTypePriceId
-                                        .value_vi
-                                    }
-                                    displayType="text"
-                                    thousandSeparator={true}
-                                    suffix={"VND"}
-                                  />
-                                )}
+                            <div className="info">
+                              <div className="Time">
+                                <div className="Time">
+                                  {TimeLine && TimeLine.timeTypeData && (
+                                    <div className="Time_item">
+                                      {TimeLine.timeTypeData.value_en}
+                                    </div>
+                                  )}
+                                </div>
+                              </div>
+                              <div className="price">
+                                Gía Khám:
+                                {arrOder &&
+                                  arrOder.DoctorInfoData &&
+                                  arrOder.DoctorInfoData.timeTypePriceId && (
+                                    <NumericFormat
+                                      value={
+                                        arrOder.DoctorInfoData.timeTypePriceId
+                                          .value_vi
+                                      }
+                                      displayType="text"
+                                      thousandSeparator={true}
+                                      suffix={"VND"}
+                                    />
+                                  )}
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="col-md-12">
-                  <form>
-                    <div class="form-group">
-                      <label for="inputAddress2">Họ Tên</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="inputAddress2"
-                        placeholder="Vui lòng nhập học tên"
-                        onChange={(event) => this.onchange(event, "firstName")}
-                        value={this.state.firstName}
-                      />
-                    </div>
-                    <div class="form-row">
+                  <div className="col-md-12">
+                    <form>
                       <div class="form-group">
-                        <label for="inputEmail4">Email</label>
+                        <label for="inputAddress2">Họ Tên</label>
                         <input
-                          type="email"
+                          type="text"
                           class="form-control"
-                          id="inputEmail4"
-                          placeholder="Nhập Email"
-                          onChange={(event) => this.onchange(event, "email")}
-                          value={this.state.email}
-                        />
-                      </div>
-                      <div class="form-group">
-                        <label for="inputPassword4">Số Điện Thoại</label>
-                        <input
-                          type="number"
-                          class="form-control"
-                          id="inputPassword4"
-                          placeholder="nhập số Điện Thoại"
+                          id="inputAddress2"
+                          placeholder="Vui lòng nhập học tên"
                           onChange={(event) =>
-                            this.onchange(event, "phonenumber")
+                            this.onchange(event, "firstName")
                           }
-                          value={this.state.phonenumber}
+                          value={this.state.firstName}
                         />
                       </div>
-                    </div>
-
-                    <div className="col-md-12">
-                      <div className="title-tt">
-                        LƯU Ý Thông tin anh/chị cung cấp sẽ được sử dụng làm hồ
-                        sơ khám bệnh, khi điền thông tin anh/chị vui lòng: Ghi
-                        rõ họ và tên, viết hoa những chữ cái đầu tiên, ví dụ:
-                        Trần Văn Phú Điền đầy đủ, đúng và vui lòng kiểm tra lại
-                        thông tin trước khi ấn "Xác nhận"
+                      <div class="form-row">
+                        <div class="form-group">
+                          <label for="inputEmail4">Email</label>
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="inputEmail4"
+                            placeholder="Nhập Email"
+                            onChange={(event) => this.onchange(event, "email")}
+                            value={this.state.email}
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label for="inputPassword4">Số Điện Thoại</label>
+                          <input
+                            type="number"
+                            class="form-control"
+                            id="inputPassword4"
+                            placeholder="nhập số Điện Thoại"
+                            onChange={(event) =>
+                              this.onchange(event, "phonenumber")
+                            }
+                            value={this.state.phonenumber}
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <button
-                      type="button"
-                      class="btn btn-warning"
-                      onClick={() => this.saveBooking()}
-                    >
-                      Xác Nhận Đặt Lịch Khám
-                    </button>
-                  </form>
+
+                      <div className="col-md-12">
+                        <div className="title-tt">
+                          LƯU Ý Thông tin anh/chị cung cấp sẽ được sử dụng làm
+                          hồ sơ khám bệnh, khi điền thông tin anh/chị vui lòng:
+                          Ghi rõ họ và tên, viết hoa những chữ cái đầu tiên, ví
+                          dụ: Trần Văn Phú Điền đầy đủ, đúng và vui lòng kiểm
+                          tra lại thông tin trước khi ấn "Xác nhận"
+                        </div>
+                      </div>
+                      <button
+                        type="button"
+                        class="btn btn-warning"
+                        onClick={() => this.saveBooking()}
+                      >
+                        Xác Nhận Đặt Lịch Khám
+                      </button>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </Modal>
+          </Modal>
+        </LoadingOverlay>
       </>
     );
   }

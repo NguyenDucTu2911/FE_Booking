@@ -1,7 +1,10 @@
 import axios from "../axios";
 
 const hendleLoginApi = (email, password) => {
-  return axios.post("/api/login", { email, password });
+  return axios.post("/api/login", {
+    email,
+    password,
+  });
 };
 
 const hendlegetUser = (id) => {
@@ -74,6 +77,10 @@ const listBooking = (data) => {
   );
 };
 
+const sendRemedyPost = (data) => {
+  return axios.post("/api/send-remedy", data);
+};
+
 export {
   hendleLoginApi,
   hendlegetUser,
@@ -92,4 +99,5 @@ export {
   hendlecreateBooking,
   verifyCreateBooking,
   listBooking,
+  sendRemedyPost,
 };

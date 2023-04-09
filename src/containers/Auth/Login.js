@@ -31,6 +31,7 @@ class Login extends Component {
     this.setState({
       errMessage: "",
     });
+
     try {
       let data = await hendleLoginApi(this.state.email, this.state.password);
       if (data && data.errCode !== 0) {

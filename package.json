@@ -9,11 +9,13 @@
     "@formatjs/intl-relativetimeformat": "^7.3.6",
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
     "@mui/material": "^5.11.15",
+    "@reduxjs/toolkit": "^1.9.3",
     "axios": "^0.21.1",
     "bootstrap": "^5.2.3",
     "connected-react-router": "^6.9.1",
     "cors": "^2.8.5",
     "emitter": "^0.0.5",
+    "jwt-decode": "^3.1.2",
     "lodash": "^4.17.21",
     "markdown-it": "^12.1.0",
     "moment": "^2.29.0",
@@ -29,6 +31,7 @@
     "react-flatpickr": "^3.10.7",
     "react-intl": "^5.20.2",
     "react-loading": "^2.0.3",
+    "react-loading-overlay": "^1.0.1",
     "react-markdown-editor-lite": "^1.3.0",
     "react-number-format": "^5.1.4",
     "react-redux": "^7.2.4",
@@ -47,7 +50,8 @@
     "redux-state-sync": "^2.1.0",
     "redux-thunk": "^2.3.0",
     "slick-carousel": "^1.8.1",
-    "typescript": "^4.3.2"
+    "typescript": "^4.3.2",
+    "universal-cookie": "^4.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
