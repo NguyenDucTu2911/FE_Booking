@@ -15,7 +15,7 @@ const Search = lazy(() => import("./Section/Search"));
 const Doctor = lazy(() => import("./Section/Doctor"));
 const HealthFacilities = lazy(() => import("./Section/HealthFacilities"));
 const Fooder = lazy(() => import("./Section/Fooder"));
-const Map = lazy(() => import("./Section/Plugins/Map"));
+const Map = lazy(() => import("./Doctor/Plugins/Map"));
 const Specialties = lazy(() => import("./Section/Specialties"));
 
 class HomePage extends Component {
