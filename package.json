@@ -10,6 +10,7 @@
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
     "@mui/material": "^5.11.15",
     "@reduxjs/toolkit": "^1.9.3",
+    "@userfront/react": "^1.0.0-alpha.9",
     "axios": "^0.21.1",
     "bootstrap": "^5.2.3",
     "connected-react-router": "^6.9.1",
